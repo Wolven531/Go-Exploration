@@ -1,2 +1,2 @@
-Set-Location -Path './src/hello/'
+Set-Location -Path '../src/hello/'
 Invoke-Expression -Command 'go build'
