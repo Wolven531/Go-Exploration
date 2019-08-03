@@ -33,6 +33,12 @@ func main() {
 		name      = `Anthony`
 	)
 
+	// NOTE: an unused variable causes compile error
+	// NOTE: float64 is preferred floating type
+	// var input float64
+	// NOTE: fmt.Scanf reads user input
+	// fmt.Scanf("%f", &input)
+
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
 }
