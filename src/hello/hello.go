@@ -14,15 +14,22 @@ func main() {
 	// name := `Anthony`
 
 	// NOTE: constant value CANNOT be reassigned
-	const EXCLAMATION string = "!"
+	// const EXCLAMATION string = "!"
+	// NOTE: constant does not need type if it can be inferred
+	// const EXCLAMATION = "!"
+	// NOTE: multiple constant declaration
+	const (
+		COMMA       = ","
+		EXCLAMATION = "!"
+	)
 
 	// NOTE: multiple variable declaration; no commas, just one line per declaration
 	var (
 		greeting  = "Hello, "
-		greeting2 = ", friend!"
+		greeting2 = COMMA + " friend" + EXCLAMATION
 		name      = `Anthony`
 	)
 
 	// fmt.Printf(greeting + greeting2 + "\n")
-	fmt.Println(greeting + name + greeting2 + EXCLAMATION)
+	fmt.Println(greeting + name + greeting2)
 }
