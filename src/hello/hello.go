@@ -3,7 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	// fmt.Printf("hello, world\n")
-	var greeting string = "Hello, world!"
-	fmt.Println(greeting)
+	// NOTE: go-lint complains type can be inferred for below line
+	// var greeting string = "Hello, world!"
+
+	// NOTE: can declare and assign using `:=` w/o var keyword
+	greeting := "Hello, "
+	// NOTE: can declare and assign using `var` and `=`
+	var greeting2 = ", friend!"
+	// NOTE: strings are denoted w/ double quote (") OR backtick (`)
+	name := `Anthony`
+
+	// fmt.Printf(greeting + greeting2 + "\n")
+	fmt.Println(greeting + name + greeting2)
 }
