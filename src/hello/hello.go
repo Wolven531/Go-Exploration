@@ -13,6 +13,9 @@ func main() {
 	// // NOTE: strings are denoted w/ double quote (") OR backtick (`)
 	// name := `Anthony`
 
+	// NOTE: constant value CANNOT be reassigned
+	const EXCLAMATION string = "!"
+
 	// NOTE: multiple variable declaration; no commas, just one line per declaration
 	var (
 		greeting  = "Hello, "
@@ -21,5 +24,5 @@ func main() {
 	)
 
 	// fmt.Printf(greeting + greeting2 + "\n")
-	fmt.Println(greeting + name + greeting2)
+	fmt.Println(greeting + name + greeting2 + EXCLAMATION)
 }
