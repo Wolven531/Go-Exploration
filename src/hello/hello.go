@@ -41,4 +41,11 @@ func main() {
 
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
+
+	// NOTE: for loop in separate statements
+	i := 1
+	for i <= 10 {
+		fmt.Println(i)
+		i = i + 1
+	}
 }
