@@ -53,6 +53,7 @@ func main() {
 		} else {
 			description += "odd"
 		}
+		// NOTE: Itoa is equivalent to FormatInt(int64(i), 10)
 		fmt.Println(strconv.Itoa(i) + description)
 	}
 }
