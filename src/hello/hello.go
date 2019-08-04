@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	// NOTE: go-lint complains type can be inferred for below line
@@ -44,6 +47,13 @@ func main() {
 
 	// NOTE: for is the ONLY loop structure in Go
 	for i := 1; i <= 10; i++ {
-		fmt.Println(i)
+		description := ""
+		if i%2 == 0 {
+			description = "even"
+		} else {
+			description = "odd"
+		}
+		// NOTE: need to convert i to int64
+		fmt.Println(strconv.FormatInt(int64(i), 10) + " " + description)
 	}
 }
