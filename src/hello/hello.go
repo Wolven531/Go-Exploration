@@ -49,12 +49,12 @@ func main() {
 	var i int64 = 1
 	// NOTE: for is the ONLY loop structure in Go
 	for ; i <= 10; i++ {
-		description := ""
+		description := " "
 		if i%2 == 0 {
-			description = "even"
+			description += "even"
 		} else {
-			description = "odd"
+			description += "odd"
 		}
-		fmt.Println(strconv.FormatInt(i, 10) + " " + description)
+		fmt.Println(strconv.FormatInt(i, 10) + description)
 	}
 }
