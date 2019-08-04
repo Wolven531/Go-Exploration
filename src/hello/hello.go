@@ -45,16 +45,14 @@ func main() {
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
 
-	// NOTE: declare as int64 so no need to convert later
-	var i int64 = 1
 	// NOTE: for is the ONLY loop structure in Go
-	for ; i <= 10; i++ {
+	for i := 1; i <= 10; i++ {
 		description := " "
 		if i%2 == 0 {
 			description += "even"
 		} else {
 			description += "odd"
 		}
-		fmt.Println(strconv.FormatInt(i, 10) + description)
+		fmt.Println(strconv.Itoa(i) + description)
 	}
 }
