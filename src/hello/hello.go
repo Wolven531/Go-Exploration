@@ -42,12 +42,8 @@ func main() {
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
 
-	// NOTE: for loop in separate statements
-	i := 1
-	for i <= 10 {
+	// NOTE: for is the ONLY loop structure in Go
+	for i := 1; i <= 10; i++ {
 		fmt.Println(i)
-		// i = i + 1
-		// i += 1
-		i++
 	}
 }
