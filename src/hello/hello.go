@@ -59,6 +59,10 @@ func main() {
 		10, // NOTE: Go compiler requires trailing comma
 	}
 
+	// optionalSliceCapacity := 10
+	// NOTE: slice can be up to len() of array but not larger
+	// intSlice := make([]int, 5, optionalSliceCapacity)
+
 	// NOTE: for is the ONLY loop structure in Go
 	// for i := 1; i <= len(nums); i++ {
 	// NOTE: `_` denotes unused variable in for loop
