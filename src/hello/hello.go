@@ -45,10 +45,14 @@ func main() {
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
 
-	var nums [10]int
+	// NOTE: declare and initialize array of ints w/ len 10
+	nums := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 	// NOTE: for is the ONLY loop structure in Go
-	for i := 1; i <= len(nums); i++ {
+	// for i := 1; i <= len(nums); i++ {
+	// NOTE: `_` denotes unused variable in for loop
+	// NOTE: `range` keyword can be used to specify which var to iterate over
+	for _, i := range nums {
 		nums[i] = i
 		description := " "
 		if i%2 == 0 {
