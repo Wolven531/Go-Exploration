@@ -45,8 +45,11 @@ func main() {
 	// fmt.Printf(greeting + greeting2 + "\n")
 	fmt.Println(greeting + name + greeting2)
 
+	var nums [10]int
+
 	// NOTE: for is the ONLY loop structure in Go
-	for i := 1; i <= 10; i++ {
+	for i := 1; i <= len(nums); i++ {
+		nums[i] = i
 		description := " "
 		if i%2 == 0 {
 			description += "even"
