@@ -53,7 +53,6 @@ func main() {
 	// NOTE: `_` denotes unused variable in for loop
 	// NOTE: `range` keyword can be used to specify which var to iterate over
 	for _, i := range nums {
-		nums[i] = i
 		description := " "
 		if i%2 == 0 {
 			description += "even"
