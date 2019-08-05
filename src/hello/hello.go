@@ -46,7 +46,18 @@ func main() {
 	fmt.Println(greeting + name + greeting2)
 
 	// NOTE: declare and initialize array of ints w/ len 10
-	nums := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	nums := [10]int{
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10, // NOTE: Go compiler requires trailing comma
+	}
 
 	// NOTE: for is the ONLY loop structure in Go
 	// for i := 1; i <= len(nums); i++ {
