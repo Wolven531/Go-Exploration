@@ -62,12 +62,14 @@ func main() {
 	// NOTE: `range` keyword can be used to specify which var to iterate over
 	for _, i := range nums {
 		description := " "
+		divByThree := i%3 == 0
+		divByTwo := i%2 == 0
 		switch {
-		case i%2 == 0 && i%3 == 0:
+		case divByTwo && divByThree:
 			description += "divisible by six"
-		case i%3 == 0:
+		case divByThree:
 			description += "divisble by three"
-		case i%2 == 0:
+		case divByTwo:
 			description += "even"
 		default:
 			description += "odd"
