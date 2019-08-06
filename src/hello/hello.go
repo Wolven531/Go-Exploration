@@ -19,10 +19,6 @@ func main() {
 	// Anthony
 	// `
 
-	// NOTE: constant value CANNOT be reassigned
-	// const EXCLAMATION string = "!"
-	// NOTE: constant does not need type if it can be inferred
-	// const EXCLAMATION = "!"
 	// NOTE: multiple constant declaration
 	const (
 		COMMA       = ","
@@ -36,7 +32,6 @@ func main() {
 		name      = `Anthony`
 	)
 
-	// NOTE: an unused variable causes compile error
 	// NOTE: float64 is preferred floating type
 	// var input float64
 	// NOTE: fmt.Scanf reads user input
