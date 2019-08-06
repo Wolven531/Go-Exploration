@@ -62,11 +62,21 @@ func main() {
 	// NOTE: `range` keyword can be used to specify which var to iterate over
 	for _, i := range nums {
 		description := " "
-		if i%2 == 0 {
+		switch {
+		case i%2 == 0 && i%3 == 0:
+			description += "divisible by six"
+		case i%3 == 0:
+			description += "divisble by three"
+		case i%2 == 0:
 			description += "even"
-		} else {
+		default:
 			description += "odd"
 		}
+		// if i%2 == 0 {
+		// 	description += "even"
+		// } else {
+		// 	description += "odd"
+		// }
 		// NOTE: Itoa is equivalent to FormatInt(int64(i), 10)
 		fmt.Println(strconv.Itoa(i) + description)
 	}
