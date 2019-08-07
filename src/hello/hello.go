@@ -49,6 +49,11 @@ func main() {
 		9,
 		10, // NOTE: Go compiler requires trailing comma
 	}
+	intSlice := make([]int, 3, 9)
+	fmt.Println("length of intSlice=", len(intSlice))
+	fmt.Println("first element=", intSlice[0])
+	fmt.Println("second element=", intSlice[1])
+	fmt.Println("third element=", intSlice[2])
 
 	// optionalSliceCapacity := 10
 	// NOTE: slice can be up to len() of array but not larger
