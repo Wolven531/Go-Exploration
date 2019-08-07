@@ -82,4 +82,13 @@ func main() {
 		// NOTE: Itoa is equivalent to FormatInt(int64(i), 10)
 		fmt.Println(strconv.Itoa(i) + description)
 	}
+
+	fmt.Println("Printing all numbers divisble by three from one to one hundred...")
+	for a := 1; a <= 100; a++ {
+		if a%3 == 0 {
+			fmt.Println(a, " is divisible by three")
+		} else {
+			fmt.Println(a, " is NOT divisible by three")
+		}
+	}
 }
