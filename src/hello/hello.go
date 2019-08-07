@@ -83,12 +83,15 @@ func main() {
 		fmt.Println(strconv.Itoa(i) + description)
 	}
 
-	fmt.Println("Printing all numbers divisble by three from one to one hundred...")
+	divisbleMap := make(map[string]int)
+	fmt.Println("Gathering all numbers divisble by three from one to one hundred...")
 	for a := 1; a <= 100; a++ {
 		if a%3 == 0 {
-			fmt.Println(a, " is divisible by three")
+			divisbleMap["numIsDivisble"]++
 		} else {
-			fmt.Println(a, " is NOT divisible by three")
+			divisbleMap["numNotDivisble"]++
 		}
 	}
+	fmt.Println("Numbers ARE divisble by three: ", divisbleMap["numIsDivisble"])
+	fmt.Println("Numbers NOT divisble by three: ", divisbleMap["numNotDivisble"])
 }
