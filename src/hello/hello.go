@@ -100,29 +100,52 @@ func main() {
 	fmt.Println("Numbers ARE divisble by three: ", divisbleMap["numIsDivisble"])
 	fmt.Println("Numbers NOT divisble by three: ", divisbleMap["numNotDivisble"])
 
-	targetList := []int{
+	targetList := []float64{
 		48, 96, 86, 68,
 		57, 82, 63, 70,
 		37, 34, 83, 27,
 		19, 97, 9, 17,
 	}
 	fmt.Println("finding the smallest number in a list of ", len(targetList), " elements...")
-	total := targetList[0]
-	largest := targetList[0]
-	smallest := targetList[0]
+	fmt.Println("Smallest number = ", lowest(targetList), " Largest number = ", highest(targetList), " Total = ", total(targetList), " Average = ", average(targetList))
+}
 
-	for ind, num := range targetList {
-		if ind > 0 {
-			total += num
-		}
-		if num < smallest {
-			smallest = num
-		}
-		if num > largest {
-			largest = num
-		}
+func average(nums []float64) float64 {
+	total := 0.0
+
+	for _, num := range nums {
+		total += num
 	}
 
-	average := float64(total) / float64(len(targetList))
-	fmt.Println("Smallest number = ", smallest, " Largest number = ", largest, " Total = ", total, " Average = ", average)
+	return total / float64(len(nums))
+}
+
+func highest(nums []float64) float64 {
+	highest := nums[0]
+	for _, num := range nums {
+		if num > highest {
+			highest = num
+		}
+	}
+	return highest
+}
+
+func lowest(nums []float64) float64 {
+	lowest := nums[0]
+	for _, num := range nums {
+		if num < lowest {
+			lowest = num
+		}
+	}
+	return lowest
+}
+
+func total(nums []float64) float64 {
+	total := 0.0
+
+	for _, num := range nums {
+		total += num
+	}
+
+	return total
 }
