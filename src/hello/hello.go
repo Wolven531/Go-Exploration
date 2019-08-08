@@ -99,4 +99,19 @@ func main() {
 	}
 	fmt.Println("Numbers ARE divisble by three: ", divisbleMap["numIsDivisble"])
 	fmt.Println("Numbers NOT divisble by three: ", divisbleMap["numNotDivisble"])
+
+	targetList := []int{
+		48, 96, 86, 68,
+		57, 82, 63, 70,
+		37, 34, 83, 27,
+		19, 97, 9, 17,
+	}
+	fmt.Println("finding the smallest number in a list of ", len(targetList), " elements...")
+	smallest := targetList[0]
+	for _, num := range targetList {
+		if num < smallest {
+			smallest = num
+		}
+	}
+	fmt.Println("Smallest number in a list of ", len(targetList), " elements is ", smallest)
 }
