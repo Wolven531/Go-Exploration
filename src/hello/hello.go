@@ -107,9 +107,14 @@ func main() {
 		19, 97, 9, 17,
 	}
 	fmt.Println("finding the smallest number in a list of ", len(targetList), " elements...")
+	total := targetList[0]
 	largest := targetList[0]
 	smallest := targetList[0]
-	for _, num := range targetList {
+
+	for ind, num := range targetList {
+		if ind > 0 {
+			total += num
+		}
 		if num < smallest {
 			smallest = num
 		}
@@ -117,5 +122,7 @@ func main() {
 			largest = num
 		}
 	}
-	fmt.Println("Smallest number = ", smallest, " Largest number = ", largest)
+
+	average := float64(total) / float64(len(targetList))
+	fmt.Println("Smallest number = ", smallest, " Largest number = ", largest, " Total = ", total, " Average = ", average)
 }
