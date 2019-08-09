@@ -108,6 +108,7 @@ func main() {
 	}
 	fmt.Println("finding the smallest number in a list of ", len(targetList), " elements...")
 	fmt.Println("Smallest number = ", lowest(targetList), " Largest number = ", highest(targetList), " Total = ", total(targetList), " Average = ", average(targetList))
+	fmt.Println("finding average of 32, 49, 51, 86, 70 w/ variadic func; average: ", variadicAverage(32, 49, 51, 86, 70))
 }
 
 func average(nums []float64) float64 {
@@ -152,4 +153,14 @@ func total(nums []float64) float64 {
 	}
 
 	return total
+}
+
+func variadicAverage(nums ...float64) float64 {
+	total := 0.0
+
+	for _, num := range nums {
+		total += num
+	}
+
+	return total / float64(len(nums))
 }
