@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
@@ -28,8 +29,6 @@ func main() {
 		name      = `Anthony`
 	)
 
-	// NOTE: float64 is preferred floating type
-	// var input float64
 	// NOTE: fmt.Scanf reads user input
 	// fmt.Scanf("%f", &input)
 
@@ -61,9 +60,6 @@ func main() {
 	// NOTE: alternative way to make a slice
 	// intSlice := nums[0:5]
 
-	// NOTE: for is the ONLY loop structure in Go
-	// for i := 1; i <= len(nums); i++ {
-	// NOTE: `_` denotes unused variable in for loop
 	// NOTE: `range` keyword can be used to specify which var to iterate over
 	for _, i := range nums {
 		description := " "
@@ -79,11 +75,6 @@ func main() {
 		default:
 			description += "odd"
 		}
-		// if i%2 == 0 {
-		// 	description += "even"
-		// } else {
-		// 	description += "odd"
-		// }
 		// NOTE: Itoa is equivalent to FormatInt(int64(i), 10)
 		fmt.Println(strconv.Itoa(i) + description)
 	}
@@ -131,6 +122,21 @@ func main() {
 	swapValues(&firstNumber, &secondNumber)
 	fmt.Println("result: firstNumber =", firstNumber, "; secondNumber =", secondNumber)
 	fmt.Println("Memory address of firstNumber =", &firstNumber)
+
+	// using structs
+	firstCircle := Circle{x: 0, y: 0, r: 5}
+	fmt.Println("Circle at (0,0) w/ r=5 has area=", circleArea(firstCircle))
+}
+
+// Circle ...
+type Circle struct {
+	x float64
+	y float64
+	r float64
+}
+
+func circleArea(c Circle) float64 {
+	return math.Pi * c.r * c.r
 }
 
 func average(nums []float64) float64 {
