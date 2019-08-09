@@ -97,8 +97,8 @@ func main() {
 			divisbleMap["numNotDivisble"]++
 		}
 	}
-	fmt.Println("Numbers ARE divisble by three: ", divisbleMap["numIsDivisble"])
-	fmt.Println("Numbers NOT divisble by three: ", divisbleMap["numNotDivisble"])
+	fmt.Println("Numbers ARE divisble by three:", divisbleMap["numIsDivisble"])
+	fmt.Println("Numbers NOT divisble by three:", divisbleMap["numNotDivisble"])
 
 	targetList := []float64{
 		48, 96, 86, 68,
@@ -106,9 +106,13 @@ func main() {
 		37, 34, 83, 27,
 		19, 97, 9, 17,
 	}
-	fmt.Println("finding the smallest number in a list of ", len(targetList), " elements...")
-	fmt.Println("Smallest number = ", lowest(targetList), " Largest number = ", highest(targetList), " Total = ", total(targetList), " Average = ", average(targetList))
-	fmt.Println("finding average of 32, 49, 51, 86, 70 w/ variadic func; average: ", variadicAverage(32, 49, 51, 86, 70))
+	fmt.Println("finding the smallest number in a list of", len(targetList), "elements...")
+	fmt.Println("Smallest number =", lowest(targetList), " Largest number =", highest(targetList), " Total =", total(targetList), " Average =", average(targetList))
+
+	// variadic function invocations
+	fmt.Println("finding average of empty list w/ variadic func; average =", variadicAverage())
+	fmt.Println("finding average of list w/ variadic func; average =", variadicAverage(targetList...))
+	fmt.Println("finding average of 32, 49, 51, 86, 70 w/ variadic func; average =", variadicAverage(32, 49, 51, 86, 70))
 }
 
 func average(nums []float64) float64 {
