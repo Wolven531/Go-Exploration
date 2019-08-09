@@ -120,6 +120,9 @@ func main() {
 	// odd number generation
 	getNextOdd := createOddNumberGenerator()
 	fmt.Println(getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd())
+
+	// factorial
+	fmt.Println("0! =", factorial(0), "; 5! =", factorial(5), "; 10! =", factorial(10))
 }
 
 func average(nums []float64) float64 {
@@ -149,6 +152,13 @@ func createOddNumberGenerator() func() uint {
 		num += 2
 		return
 	}
+}
+
+func factorial(numRemaining uint) uint {
+	if numRemaining == 0 {
+		return 1
+	}
+	return numRemaining * factorial(numRemaining-1)
 }
 
 func highest(nums []float64) float64 {
