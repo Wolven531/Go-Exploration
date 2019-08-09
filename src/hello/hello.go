@@ -125,7 +125,7 @@ func main() {
 
 	// using structs
 	firstCircle := Circle{x: 0, y: 0, r: 5}
-	fmt.Println("Circle at (0,0) w/ r=5 has area=", circleArea(firstCircle))
+	fmt.Println("Circle at (0,0) w/ r=5 has area=", firstCircle.area())
 }
 
 // Circle ...
@@ -135,7 +135,7 @@ type Circle struct {
 	r float64
 }
 
-func circleArea(c Circle) float64 {
+func (c *Circle) area() float64 {
 	return math.Pi * c.r * c.r
 }
 
