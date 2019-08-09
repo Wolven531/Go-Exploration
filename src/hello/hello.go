@@ -113,6 +113,13 @@ func main() {
 	fmt.Println("finding average of empty list w/ variadic func; average =", variadicAverage())
 	fmt.Println("finding average of list w/ variadic func; average =", variadicAverage(targetList...))
 	fmt.Println("finding average of 32, 49, 51, 86, 70 w/ variadic func; average =", variadicAverage(32, 49, 51, 86, 70))
+
+	// even number generation
+	getNextEven := createEvenNumberGenerator()
+	fmt.Println(getNextEven(), getNextEven(), getNextEven(), getNextEven(), getNextEven(), getNextEven())
+	// odd number generation
+	getNextOdd := createOddNumberGenerator()
+	fmt.Println(getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd(), getNextOdd())
 }
 
 func average(nums []float64) float64 {
@@ -123,6 +130,25 @@ func average(nums []float64) float64 {
 	}
 
 	return total / float64(len(nums))
+}
+
+func createEvenNumberGenerator() func() uint {
+	num := uint(0)
+	return func() (returnVal uint) {
+		returnVal = num
+		num += 2
+		return
+	}
+}
+
+// TODO: optimize this is optional start values are possible
+func createOddNumberGenerator() func() uint {
+	num := uint(1)
+	return func() (returnVal uint) {
+		returnVal = num
+		num += 2
+		return
+	}
 }
 
 func highest(nums []float64) float64 {
