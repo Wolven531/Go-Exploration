@@ -123,6 +123,13 @@ func main() {
 
 	// factorial
 	fmt.Println("0! =", factorial(0), "; 5! =", factorial(5), "; 10! =", factorial(10))
+
+	// reference swap
+	firstNumber := 5.0
+	secondNumber := 12.0
+	fmt.Println("swapping 5 and 12 using swapValues()...")
+	swapValues(&firstNumber, &secondNumber)
+	fmt.Println("result: firstNumber =", firstNumber, "; secondNumber =", secondNumber)
 }
 
 func average(nums []float64) float64 {
@@ -183,6 +190,12 @@ func lowest(nums []float64) float64 {
 
 func lowestAndHighest(nums []float64) (float64, float64) {
 	return lowest(nums), highest(nums)
+}
+
+func swapValues(num1 *float64, num2 *float64) {
+	tempVal := *num1
+	*num1 = *num2
+	*num2 = tempVal
 }
 
 func total(nums []float64) float64 {
