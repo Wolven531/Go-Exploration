@@ -124,14 +124,22 @@ func main() {
 	fmt.Println("Memory address of firstNumber =", &firstNumber)
 
 	// using structs
-	firstCircle := Circle{x: 0, y: 0, r: 5}
-	fmt.Println("Circle at (0,0) w/ r=5 has area=", firstCircle.area())
+	firstCircle := Circle{r: 5}
+	// Circle "is a" Shape, set x and y
+	firstCircle.x = 3
+	firstCircle.y = 3
+	fmt.Println("Circle at (3,3) w/ r=5 has area=", firstCircle.area())
+}
+
+// Shape ...
+type Shape struct {
+	x float64
+	y float64
 }
 
 // Circle ...
 type Circle struct {
-	x float64
-	y float64
+	Shape
 	r float64
 }
 
