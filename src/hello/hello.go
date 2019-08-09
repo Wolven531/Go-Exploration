@@ -130,6 +130,7 @@ func main() {
 	fmt.Println("swapping 5 and 12 using swapValues()...")
 	swapValues(&firstNumber, &secondNumber)
 	fmt.Println("result: firstNumber =", firstNumber, "; secondNumber =", secondNumber)
+	fmt.Println("Memory address of firstNumber =", &firstNumber)
 }
 
 func average(nums []float64) float64 {
