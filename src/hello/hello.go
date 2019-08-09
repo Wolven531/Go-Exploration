@@ -140,6 +140,10 @@ func lowest(nums []float64) float64 {
 	return lowest
 }
 
+func lowestAndHighest(nums []float64) (float64, float64) {
+	return lowest(nums), highest(nums)
+}
+
 func total(nums []float64) float64 {
 	total := 0.0
 
