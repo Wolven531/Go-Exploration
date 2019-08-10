@@ -154,19 +154,22 @@ type Circle struct {
 	r float64
 }
 
-func pinger(c chan string) {
+// `c` can only send strings
+func pinger(c chan<- string) {
 	for i := 0; ; i++ {
 		c <- "ping"
 	}
 }
 
+// `c` is bi-directional
 func ponger(c chan string) {
 	for i := 0; ; i++ {
 		c <- "pong"
 	}
 }
 
-func printer(c chan string) {
+// `c` can only receive strings
+func printer(c <-chan string) {
 	for {
 		msg := <-c
 		fmt.Println(msg)
