@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -129,6 +130,15 @@ func main() {
 	firstCircle.x = 3
 	firstCircle.y = 3
 	fmt.Println("Circle at (3,3) w/ r=5 has area=", firstCircle.area())
+
+	var c = make(chan string)
+
+	go pinger(c)
+	go ponger(c)
+	go printer(c)
+
+	var input string
+	fmt.Scanln(&input)
 }
 
 // Shape ...
@@ -141,6 +151,26 @@ type Shape struct {
 type Circle struct {
 	Shape
 	r float64
+}
+
+func pinger(c chan string) {
+	for i := 0; ; i++ {
+		c <- "ping"
+	}
+}
+
+func ponger(c chan string) {
+	for i := 0; ; i++ {
+		c <- "pong"
+	}
+}
+
+func printer(c chan string) {
+	for {
+		msg := <-c
+		fmt.Println(msg)
+		time.Sleep(time.Second * 1)
+	}
 }
 
 func (c *Circle) area() float64 {
