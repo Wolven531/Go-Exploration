@@ -131,6 +131,7 @@ func main() {
 	firstCircle.y = 3
 	fmt.Println("Circle at (3,3) w/ r=5 has area=", firstCircle.area())
 
+	fmt.Println("Starting ping n pong; Press [Enter] to terminate")
 	var c = make(chan string)
 
 	go pinger(c)
